@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <title>Home</title>
+
+    <meta charset="utf-8">
+
+<style>
+table, th, td {
+  border: 1px solid black;
+  border-collapse: collapse;
+  background-color:#00FF00;
+}
+
+</style>
+  </head>
+  <body>
+    
+    Hoje : {{promocao}}
+    <table >
+      <thead>
+        <tr>
+          <th>Id</th>
+          <th>Produto</th>
+           <th>Descrição</th>
+            <th>Preço</th>
+             <th>Qtd</th>           
+    </tr>
+  </thead>
+  <tbody>
+       <tr>
+        <td><a href="{% url 'index' %}">{{produto.id}}</a></td>
+        <td>{{produto.nome}}</td>
+        <td>{{produto.descriacao}}</td>
+        <td>{{produto.preco}}</td>
+        <td>{{produto.quantidade}}</td>
+       </tr>
+  </tbody> 
+    </table>
+  </body>
+</html>

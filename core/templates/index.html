@@ -1,0 +1,42 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <title>Home</title>
+    <meta charset="utf-8">
+    <link rel='stylesheet' href='{% static 'css/estilo.css' %}' type='text/css'>
+<style>
+table, th, td {
+  border: 1px solid black;
+  border-collapse: collapse;
+  background-color:#00FF00;
+}
+
+</style>
+  </head>
+  <body>
+    
+    Hoje : {{promocao}}
+    <table >
+      <thead>
+        <tr>
+          <th>Id</th>
+          <th>Produto</th>
+           <th>Descrição</th>
+            <th>Preço</th>      
+    </tr>
+  </thead>
+  <tbody>
+    {% for produto in produtos %}
+       <tr>
+
+        <td><a href="{% url 'produto' produto.id %}">{{produto.id}}</a></td>
+        <td>{{produto.nome}}</td>
+        <td>{{produto.descriacao}}</td>
+        <td>{{produto.preco}}</td>
+       </tr>
+    {% endfor %}
+  </tbody> 
+    </table>
+  </body>
+</html>
